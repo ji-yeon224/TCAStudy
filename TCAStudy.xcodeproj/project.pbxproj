@@ -6,8 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CE90627D2D719A3C0019C409 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = CE90627C2D719A3C0019C409 /* ComposableArchitecture */; };
+		CE90627F2D719C6D0019C409 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CE90627E2D719C6D0019C409 /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		CE90620C2D71936E0019C409 /* TCAStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCAStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE90627E2D719C6D0019C409 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -23,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE90627D2D719A3C0019C409 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,7 +39,9 @@
 		CE9062032D71936E0019C409 = {
 			isa = PBXGroup;
 			children = (
+				CE90627E2D719C6D0019C409 /* .gitignore */,
 				CE90620E2D71936E0019C409 /* TCAStudy */,
+				CE90621D2D7194740019C409 /* Frameworks */,
 				CE90620D2D71936E0019C409 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +52,13 @@
 				CE90620C2D71936E0019C409 /* TCAStudy.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CE90621D2D7194740019C409 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -65,6 +81,7 @@
 			);
 			name = TCAStudy;
 			packageProductDependencies = (
+				CE90627C2D719A3C0019C409 /* ComposableArchitecture */,
 			);
 			productName = TCAStudy;
 			productReference = CE90620C2D71936E0019C409 /* TCAStudy.app */;
@@ -94,6 +111,9 @@
 			);
 			mainGroup = CE9062032D71936E0019C409;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				CE90627B2D719A3B0019C409 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CE90620D2D71936E0019C409 /* Products */;
 			projectDirPath = "";
@@ -109,6 +129,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE90627F2D719C6D0019C409 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +345,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE90627B2D719A3B0019C409 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.17.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE90627C2D719A3C0019C409 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE90627B2D719A3B0019C409 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE9062042D71936E0019C409 /* Project object */;
 }
