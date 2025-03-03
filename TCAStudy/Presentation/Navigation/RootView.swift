@@ -14,6 +14,7 @@ struct RootView: View {
   var body: some View {
     NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
       VStack {
+        Text(store.userInfo)
         Button("View1_1stView") {
           store.send(.pushToFeature(.first))
         }
@@ -27,6 +28,9 @@ struct RootView: View {
     } destination: { store in
       NavigationHandler(store: store)
     }
+    .onAppear {
+      store.send(.getUserInfo)
+    }
     
   }
   
@@ -38,17 +42,23 @@ struct RootFeature {
   @ObservableState
   struct State: Equatable {
     var path = StackState<PathFeature.State>()
+    var userInfo: String = ""
   }
   
   enum Action {
+    case getUserInfo
     case path(StackActionOf<PathFeature>)
     case pushToFeature(FeatureType)
   }
   
+  @Dependency(\.userInfoUseCase) var userInfoUseCase
   
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
+      case .getUserInfo:
+        state.userInfo = userInfoUseCase.getUserInfo()
+        return .none
       case let .pushToFeature(featureType):
         state.path.append(featureType.toPathState())
         return .none
